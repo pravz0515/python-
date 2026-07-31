@@ -1,0 +1,15 @@
+from database import users
+
+def withdraw(account, amount):
+
+    if users[account]["balance"] >= amount:
+
+        users[account]["balance"] -= amount
+
+        return f"""
+₹{amount} Withdraw Successful
+
+Current Balance : ₹{users[account]['balance']}
+"""
+
+    return "Insufficient Balance"

@@ -1,0 +1,21 @@
+from database import users
+
+def transfer(sender, receiver, amount):
+
+    if sender not in users:
+        return "Sender Account Not Found"
+
+    if receiver not in users:
+        return "Receiver Account Not Found"
+
+    if users[sender]["balance"] < amount:
+        return "Insufficient Balance"
+
+    users[sender]["balance"] -= amount
+    users[receiver]["balance"] += amount
+
+    return f"""
+₹{amount} Transfer Successful
+
+Current Balance : ₹{users[sender]['balance']}
+"""

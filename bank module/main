@@ -1,0 +1,76 @@
+from login import login
+from register import register
+from balance import balance
+from withdraw import withdraw
+from deposit import deposit
+from transfer import transfer
+from ministatement import ministatement
+from logout import logout
+
+print("====== MINI BANK ======")
+print("1. Login")
+print("2. Register")
+
+choice = int(input("Enter Choice : "))
+
+if choice == 1:
+
+    account = int(input("Enter Account Number : "))
+    password = input("Enter Password : ")
+
+    if login(account, password):
+
+        while True:
+
+            print("""
+1. Balance
+2. Withdraw
+3. Deposit
+4. Transfer
+5. Mini Statement
+6. Logout
+""")
+
+            ch = int(input("Enter Choice : "))
+
+            if ch == 1:
+                print(balance(account))
+
+            elif ch == 2:
+                amount = int(input("Enter Amount : "))
+                print(withdraw(account, amount))
+
+            elif ch == 3:
+                amount = int(input("Enter Amount : "))
+                print(deposit(account, amount))
+
+            elif ch == 4:
+                receiver = int(input("Receiver Account : "))
+                amount = int(input("Amount : "))
+                print(transfer(account, receiver, amount))
+
+            elif ch == 5:
+                print(ministatement(account))
+
+            elif ch == 6:
+                logout()
+                break
+
+            else:
+                print("Invalid Choice")
+
+    else:
+        print("Invalid Login Credentials")
+
+elif choice == 2:
+
+    name = input("Enter Name : ")
+    email = input("Enter Email : ")
+    amount = int(input("Initial Deposit : "))
+    password = input("Create Password : ")
+
+    print(register(name, email, amount, password))
+
+else:
+    print("Invalid Choice")
+    

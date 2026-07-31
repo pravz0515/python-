@@ -1,0 +1,11 @@
+from database import users
+
+def deposit(account, amount):
+
+    users[account]["balance"] += amount
+
+    return f"""
+₹{amount} Deposited Successfully
+
+Current Balance : ₹{users[account]['balance']}
+"""

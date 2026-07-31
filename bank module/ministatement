@@ -1,0 +1,16 @@
+from database import users
+
+def ministatement(account):
+
+    data = users[account]
+
+    return f"""
+----------- MINI STATEMENT -----------
+
+Account Number : {account}
+Name           : {data['name']}
+Email          : {data['email']}
+Balance        : ₹{data['balance']}
+
+--------------------------------------
+"""

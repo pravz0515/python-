@@ -1,0 +1,14 @@
+users = {
+    1001: {
+        "name": "pravalika",
+        "email": "prav@gmail.com",
+        "balance": 5000,
+        "password": "1001"
+    },
+    1002: {
+        "name": "Akshitha",
+        "email": "Akshitha@gmail.com",
+        "balance": 4000,
+        "password": "1002"
+    }
+}

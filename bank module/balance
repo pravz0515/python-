@@ -1,0 +1,5 @@
+from database import users
+
+def balance(account):
+
+    return f"Current Balance : ₹{users[account]['balance']}"

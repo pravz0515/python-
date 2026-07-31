@@ -1,0 +1,9 @@
+from database import users
+
+def login(account, password):
+
+    if account in users:
+        if users[account]["password"] == password:
+            return True
+
+    return False
